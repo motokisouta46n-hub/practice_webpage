@@ -30,27 +30,26 @@ export function setupConverter() {
   }
   if (converterTo.options.length > 0) {
     converterTo.selectedIndex = 1;
+  }
+  // 変換を実行
+  function convert() {
+    const value = parseFloat(converterInput.value);
 
-    // 変換を実行
-    function convert() {
-      const value = parseFloat(converterInput.value);
-
-      if (isNaN(value)) {
-        converterResult.textContent = "数値を入力してください";
-        return;
-      }
-
-      const fromBase = converterFrom.value;
-      const toBase = converterTo.value;
-      const converted = (value * fromBase) / toBase;
-
-      // 結果を3桁まで丸める
-      converterResult.textContent = `${value} ${lengthUnit[converterFrom.selectedIndex].name} = ${converted.toFixed(3)} ${lengthUnit[converterTo.selectedIndex].name}`;
+    if (isNaN(value)) {
+      converterResult.textContent = "数値を入力してください";
+      return;
     }
 
-    converterForm.addEventListener("input", convert);
+    const fromBase = converterFrom.value;
+    const toBase = converterTo.value;
+    const converted = (value * fromBase) / toBase;
 
-    // 初期化
-    convert(); // 初期値で変換を実行
+    // 結果を3桁まで丸める
+    converterResult.textContent = `${value} ${lengthUnit[converterFrom.selectedIndex].name} = ${converted.toFixed(3)} ${lengthUnit[converterTo.selectedIndex].name}`;
   }
+
+  converterForm.addEventListener("input", convert);
+
+  // 初期化
+  convert(); // 初期値で変換を実行
 }
