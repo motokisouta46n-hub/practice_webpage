@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Dashboard</title>
+    <title>first Webpage</title>
     <!-- 独自のCSSファイルを読み込み -->
     <link rel="stylesheet" href="./style.css" />
     <link
@@ -26,11 +26,11 @@
         <ul>
           <li class="sidebar-menu-item tab-item" data-tab="converter">
             <span class="ri-scales-3-line"></span>
-            <span>Unit Converter</span>
+            <span>単位変換</span>
           </li>
-          <!-- メニュー項目にFlashcardsを追加してください -->
-          <li class="sidebar-menu-item tab-item" data-tab="flashcards">
-            <span class="ri-book-line">Flashcards</span>
+          <!-- メニュー項目にTo doを追加してください -->
+          <li class="sidebar-menu-item tab-item" data-tab="todolist">
+            <span class="ri-book-line">To do</span>
           </li>
         </ul>
       </aside>
@@ -43,23 +43,23 @@
             <div class="profile-circle">
               <span class="ri-user-smile-line"></span>
             </div>
-            <h1 class="section-title">Personal DashBoard へようこそ</h1>
+            <h1 class="section-title">first web page へようこそ</h1>
             <p class="section-subtitle">
-              Make your daily life more convenient and enjoyable
+              こちらはProgate教材を基に作成したページです。
             </p>
           </header>
           <div class="section-body">
             <div class="section-description">
-              <p>
-                This dashboard is a tool to enrich your daily life. You can
-                easily use essential features such as diary entries, memo
-                management, and checking weather information.
-              </p>
-              <p>
-                Small daily records become irreplaceable memories, and efficient
-                task management leads to fulfilling days. Please use this as a
-                partner that supports your everyday life.
-              </p>
+              <ul>
+                <li>
+                  単位変換ページでは、主要な単位(メートル、インチなど)の変換を行えます。
+                </li>
+
+                <li>
+                  To do
+                  ページでは今日やるべきことをページに追加、削除ができます。
+                </li>
+              </ul>
             </div>
           </div>
         </section>
@@ -100,17 +100,53 @@
             </div>
           </div>
         </section>
-        <!-- 暗記カードセクション -->
-        <section class="content-section hidden" id="flashcards">
+        <!-- To doセクション -->
+        <section class="content-section hidden" id="todolist">
+          <!-- ヘッダー-->
           <header class="section-header">
-            <h1 class="section-title">Flashcards</h1>
+            <h1 class="section-title">To do リスト</h1>
           </header>
+          <!-- body部分-->
           <div class="section-body">
-            <!-- 暗記カードのコンテンツを追加してください -->
-            <div id="flashcards-list"></div>
+            <!--追加ボタン-->
+            <div class="add-todo-container">
+              <button class="btn add-todo">
+                <span>追加</span>
+              </button>
+            </div>
+            <div class="modal hidden">
+              <div class="modal-content">
+                <h2 class="modal-title">Add To do</h2>
+                <form id="word-form" class="modal-form">
+                  <div class="form-group">
+                    <label class="form-label">やること(To do)</label>
+                    <input
+                      type="text"
+                      id="todo-input"
+                      class="form-input"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">期日</label>
+                    <input
+                      type="date"
+                      id="deadline-input"
+                      class="form-input"
+                      required
+                    />
+                  </div>
+                  <div class="modal-actions">
+                    <button type="button" class="cancel-word">Cancel</button>
+                    <button type="submit" class="save-word">Save</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- todo list-->
+            <div class="todo-list"></div>
           </div>
         </section>
-        <!-- End 暗記カードセクション -->
       </main>
     </div>
     <script type="module" src="main.js"></script>

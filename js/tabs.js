@@ -1,26 +1,26 @@
 export function setupTabs() {
   const homeLink = document.querySelector('[data-tab="home"]');
   const converterTab = document.querySelector('[data-tab="converter"]');
-  const flashcardsTab = document.querySelector('[data-tab="flashcards"]');
+  const todolistTab = document.querySelector('[data-tab="todolist"]');
   const homeSection = document.querySelector("#home");
   const converterSection = document.querySelector("#converter");
-  const flashcardsSection = document.getElementById("flashcards");
+  const todolistSection = document.getElementById("todolist");
 
   homeLink.addEventListener("click", () => {
     converterSection.classList.add("hidden");
     homeSection.classList.remove("hidden");
-    flashcardsSection.classList.add("hidden");
+    todolistSection.classList.add("hidden");
   });
 
   converterTab.addEventListener("click", () => {
     homeSection.classList.add("hidden");
     converterSection.classList.remove("hidden");
-    flashcardsSection.classList.add("hidden");
+    todolistSection.classList.add("hidden");
   });
 
-  flashcardsTab.addEventListener("click", () => {
+  todolistTab.addEventListener("click", () => {
     homeSection.classList.add("hidden");
     converterSection.classList.add("hidden");
-    flashcardsSection.classList.remove("hidden");
+    todolistSection.classList.remove("hidden");
   });
 }

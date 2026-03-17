@@ -6,14 +6,14 @@ export function setupConverter() {
   const converterResult = document.querySelector(".converter-result");
 
   const lengthUnit = [
-    { name: "meter", base: 1 },
-    { name: "kilometer", base: 1000 },
-    { name: "centimeter", base: 0.01 },
-    { name: "millimeter", base: 0.001 },
-    { name: "inch", base: 0.0254 },
-    { name: "foot", base: 0.3048 },
-    { name: "yard", base: 0.9144 },
-    { name: "mile", base: 1609.344 },
+    { name: "メートル", base: 1 },
+    { name: "キロメートル", base: 1000 },
+    { name: "センチメートル", base: 0.01 },
+    { name: "ミリメートル", base: 0.001 },
+    { name: "インチ", base: 0.0254 },
+    { name: "フィート", base: 0.3048 },
+    { name: "ヤード", base: 0.9144 },
+    { name: "マイル", base: 1609.344 },
   ];
 
   converterFrom.innerHTML = "";
